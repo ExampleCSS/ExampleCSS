@@ -15,11 +15,67 @@ html {
 }
 
 body {
-    padding: min(50px, 7%);
-    background-color: rgb(13, 13, 20);
     display: flex;
-    flex-direction: column;
+    margin: 0;
+    background-color: #222429;
+}
+
+.sidebar {
+    width: 100px;
+    background-color: rgba(75, 82, 92, 0.3);
+    padding: 15px;
+    justify-content: top;
     align-items: center;
+    align-content: center;
+    height: auto;
+    overflow: auto;
+    position: fixed;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 1px solid rgba(75, 82, 92, 0.3);
+    border-radius: 15px; /* Rounded edges */
+    font-family: 'Helvetica', sans-serif; /* Helvetica font */
+    font-size: smaller;
+    font-weight: bold; /* Bold font */
+    color: rgb(107, 105, 105); /* Font color white */
+}
+
+.sidebar a {
+    display: block;
+    color: rgb(124, 123, 123); /* Font color white */
+    padding: 8px 0;
+    text-decoration: none;
+    font-weight: bold; /* Bold font */
+}
+
+.sidebar a:hover {
+    background-color: #5e5e5e;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        width: 80px;
+        padding: 5px;
+    }
+
+    .sidebar a {
+        padding: 5px 0;
+    }
+}
+
+.main-content {
+    margin-left: 50px; /* Adjust based on sidebar width */
+    padding: 20px;
+    flex-grow: 1;
 }
 
 h1 {
