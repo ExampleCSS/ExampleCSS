@@ -2,7 +2,7 @@
 
 Working progress of relearning HTML. 
 
-Feel free to reacah out with any advice. I'd massively appreciate it. 
+Feel free to reach out with any advice. I'd massively appreciate it. 
 
 CS. 
 
