@@ -1,0 +1,85 @@
+body {
+    min-height: auto;
+    border: 8px solid rgb(66, 66, 66);
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: rgb(13, 13, 20);
+}
+.title {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 30pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+    margin: 20px 0;
+}
+
+#box-tester {
+    min-width: 100%;
+    flex-grow: 1;
+    flex-shrink: 0;
+    background-color: #79151d;
+    font-size: 40px !important;
+    font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+#box2wideshrink {
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    min-width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    background-color: #79151d;
+    font-size: 20px;
+    font-weight: bold; /* Corrected from font-style to font-weight */
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+.box {
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    min-width: 20px; /*causes overflow at higher dimensions, but its essential. fix by adding @media*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 200px;
+    background-color: #bf212d;
+    font-size: 20px;
+    font-style: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+@media(max-width: 320px) { /*I chose 320px as it is the smallest phone size. This is a media query. It is used to change the CSS based on the size of the screen. */
+    .box {
+        flex-wrap: wrap; /*this will wrap the boxes when the screen is too small. */
+    }
+}
+/*Flexbox can be used in any element, not just the body. It is a display property.*/
+
+
+    /*flex-direction: row; /*direction of the main axis. row is left to right, column is top to bottom
+    justify-content: center; /*aligns/positions content on the main axis -- I should add a line to an example signifying this
+    align-items: center; /*positions content on the cross axis. opposite of above
+    */
+
+    /*justify-content: main axis alignment
+    align-items: cross axis alignment
+    flex-wrap: responsive breaks
+    flex-shrink: allow/deny div to become smaller
+    flex-grow: allow/deny div to become larger
+    min-width: minimum width of the div
+    max-width: maximum width of the div
+    */
