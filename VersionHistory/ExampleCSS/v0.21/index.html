@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>ExampleCSS</title>
+    </head>
+    <body>
+    <div class="sidebar">
+        <a href="flexbox/index.html">Flexbox</a>
+        <a href="#"> Link 1</a>
+        <a href="#"> Link 2</a>
+        <a href="#"> Link 3</a>
+        <a href="#"> Link 4</a>
+        <a href="#"> Link 5</a>
+    </div>
+    <div class="main-content">
+        <h1>A playground for relearning HTML & CSS<br><br><br></h1>
+
+        <div class="grid-container">
+
+            <div class="cardGreen" tabindex="0">
+                <h2>Can't < br > quite yet</h2>
+                <p>So using a br on the body (outside of the card elements) breaks the code (trying to figure out still). Vaguely remember shrinking the body by 75%, so I guess I'll start there. <b>Workaround</b> is to use BR on the titles for now. Funny how most of my issues are stemming from not properly researching the page setup. Shows that I've been far too reliant on Wordpress in the past. <br><br></p>
+                <h2>Forgot something</h2>
+                <p>Seriously, I meant to write something import here but I have no idea what it was. Oh well. </p>
+                <h2 class="code-title">I guess it's fixed</h2>
+                <p class="code-title">No idea what/why that br issue was. It seems to be fixed? Go me.<br><br><br><br><br></p>
+                <textarea type="text" value="test" class="code-input">Good job finding this little prompt. Thank you, too. I appreciate the engagement.<br> Well, these cards have been an interesting first 'project' for sure. Whilst the majority of the code is my own input, I realise (half way through - I'm still not particularly happy with the results) I was far too reliant on CoPilot. I would still absolutely recommend it as a learning tool, and development tool. The amount of shit I've learned in a few days is.. Unreal. It opens a huge door for knowledge, and is engaging enough to feel like an actual teacher. Granted, a teach who is constantly incorrect, and breaks your code on a regular basis. But shit, it's all about that code vocab.<br> My second 'project', flexbox, uses only my own input. In the future, I'll be adding snippets of code for 'ease of access'. It'll be in relation to whatever comes of this page. Still need to make it nice and pretty. I guess this card turned out to be an unintended mini dev log.</textarea>
+            </div>
+<!-- main card is above -->
+<div class="cardGreen" tabindex="0">
+    <h2>Grid Container CSS</h2>
+    <p>The barebones of how the grid works. Opposite to flexbox, grid container retains the grid format in a more 'static' way. I'm a pretty big fan of the customizability it offers. It seems that every .card I have placed within is fully responsive - to an extent. Scaling the screen size seems to increase the entire row size dependant of content within the P. I guess this is the downside of not using flexbox. Probably best to use this when there is a character limit, or with only 4-6 cards per grid. The pretty awesome thing I discovered is if you add a hover to the card (click activate), the grid automatically resizes to the content. Pretty sweet. I guess a workaround in the meanwhile is to center/align/justify (still trying to remember which one) h2 & P to the center of the card.</p>
+    <h2 class="code-title">Grid Container 1 & 2</h2>
+    <p class="code-title">Code is being constantly amended for them, but they're super simple. In progress 3 column included.<br><br></p>
+
+    <textarea type="text" value="test" class="code-input">
+
+.grid-container {
+            position: relative;
+            display: grid;
+            border: 4px solid transparent;
+            border-radius: 15px;
+            grid-template-columns: repeat(2, minmax(250px, 1fr));
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+            /* z-index: -1; - error -1 breaks the textarea*/
+        }
+        
+        .grid-container2 {
+            position: relative;
+            display: grid;
+            border: 4px solid transparent;
+            border-radius: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(24%, 1fr));
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        /* .grid-container2 {             3 column grid:
+            position: relative;
+            display: grid;
+            border: 4px solid transparent;
+            border-radius: 15px;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        } */
+        
+        .grid-container::before, .grid-container2::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
+            z-index: -2; /* edited from -1 to 0 but maaay break something. Review later */
+            border-radius: inherit;
+            background: linear-gradient(to right, rgba(13, 13, 20, 0.7), rgba(75, 82, 92, 0.3));
+            box-shadow: 0 0 0 20px rgba(13, 13, 20, 0.158);
+        }
+        
+        .grid-container2::before {
+            background: linear-gradient(to right, rgba(75, 82, 92, 0.3), rgba(13, 13, 20, 0.7));
+            box-shadow: 0 0 0 20px rgba(13, 13, 20, 0.079);
+            z-index: -2; /*could cause error*/
+        }
+        
+        @media (max-width: 768px) {
+            html {
+                font-size: 1.6vw;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            .card {
+                font-size: 0.5rem;
+            }
+            .card h2 {
+                font-size: 1.2rem;
+                word-break: break-word;
+            }
+            .grid-container, .grid-container2 {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* change in future */
+                margin-top: 20px;
+            }
+        }
+
+    </textarea>
+    <h2 class="code-title2"><br><br>Ignore the ramblings</h2>
+    <p class="code-title2">Learning is way easier when you're typing down random garbage imo. I'll correct the misinformation as I learn. </p>
+</div>
+
+<!-- Secondary card is above -->
+<!-- #region card 3 is below -->
+
+            </textarea>
+
+            <div class="cardYellow" tabindex="0">
+                <h2>Animated border colours<br><i>task reminder</i></h2>
+                <p>Need to remember to actually implement these. Code is going to be an absolute mess (already is) so I'm majorly procrastinating. If my idea works it'll look pretty sweet though.</p>
+                <h2 class="code-title">Wow, that was harder than expected</h2>
+                <p class="code-title">Seriously, that took forever. Stoked I managed to figure it out on my own. The code inside the textarea is pretty janky, but it works. I should research what I can exactly do with @keyframes. So much potential.</p>
+                <textarea class="code-input"><b>Card, animations and elements:</b><br>
+                    /* Styles for card elements with common properties */
+                    .card, .cardYellow, .cardGreen {
+                        margin: 0 auto; /* Center the card horizontally */
+                        text-align: center; /* Center text inside the card */
+                        font-size: 1.5rem; /* Set the font size */
+                        background: #222429; /* Set the background color */
+                        padding: 20px; /* Add padding inside the card */
+                        display: block; /* Display as block element */
+                        flex-direction: column; /* Arrange children in a column */
+                        align-items: center; /* Center children horizontally */
+                        border-radius: 20px; /* Round the corners */
+                        position: relative; /* Position relative for pseudo-elements */
+                        min-height: 290px; /* Set minimum height */
+                        height: fit-content; /* Adjust height to fit content */
+                    }
+                    
+                    /* Styles for ::before and ::after pseudo-elements of card elements */
+                    .card::after, .card::before,
+                    .cardYellow::after, .cardYellow::before,
+                    .cardGreen::after, .cardGreen::before {
+                        content: ''; /* Empty content for pseudo-elements */
+                        position: absolute; /* Position absolutely within the card */
+                        height: 100%; /* Full height of the card */
+                        width: 100%; /* Full width of the card */
+                        background-image: conic-gradient(transparent, #bf212d, transparent, #bf212d, transparent); /* Gradient background */
+                        top: 50%; /* Center vertically */
+                        left: 50%; /* Center horizontally */
+                        transform: translate(-50%, -50%); /* Adjust position to center */
+                        z-index: -1; /* Place behind the card content */
+                        padding: 2px; /* Add padding */
+                        border-radius: 23px; /* Round the corners */
+                        animation: paddingRed 2s infinite; /* Apply animation */
+                    }
+                    
+                    /* Specific background for .cardYellow pseudo-elements */
+                    .cardYellow::after, .cardYellow::before {
+                        background-image: conic-gradient(transparent, #ccda12, transparent, #ccda12, transparent); /* Yellow gradient */
+                    }
+                    
+                    /* Specific background for .cardGreen pseudo-elements */
+                    .cardGreen::after, .cardGreen::before {
+                        background-image: conic-gradient(transparent, #148022, transparent, #148022, transparent); /* Green gradient */
+                    }
+                    
+                    /* Blur and opacity for ::before pseudo-elements */
+                    .card::before, .cardYellow::before, .cardGreen::before {
+                        filter: blur(0.2rem); /* Apply blur effect */
+                        opacity: 0.9; /* Set opacity */
+                    }
+                    
+                    /* Keyframes for padding animation */
+                    @keyframes paddingRed {
+                        from { padding: 6px; }
+                        25% { padding: 4px; }
+                        50% { padding: 2px; }
+                        75% { padding: 4px; }
+                        to { padding: 6px; }
+                    }
+                    </textarea>
+                    <h2 class="code-title2">Colour Coding</h2>
+                    <p class="code-title2">I keep forgetting what I'm working on. So.. For this grid, bf212d is not started, yellow is in progress and green is mostly completed. I'm sure there is a much easier way to code this. For now I'm sticking with individual card classes per border. Added ChatGPT annotations</p>
+            </div>
+<!-- #endregion card 3 is above -->
+
+            </textarea>
+            <div class="cardYellow" tabindex="0">
+                <h2>Sidebar Left<br><i>implemented - unfin</i></h2>
+                <p>I've implemented a basic sidebar, but it's messsssyyyy. Responsive, but messy. I should finalise this first, and then do the vh afterwards. Going to be tricky making it responsive if I base it on current CSS. Maybe right sidebar up by 15%, pad out some space, then duplicate underneath.  </p>
+                <textarea type="text" value="test" class="code-input"></textarea>
+
+            </div>
+            </textarea><div class="card" tabindex="0">
+                <h2>Sidebar Right<br><i>task reminder: vh</i></h2>
+                <p>Duplicate the left side bar into a new class probably named sidebar-right. It will contain the version history of the page currently on, and will span across future elements. Think it'll be a bit more of a nightmare than I expect.</p>
+                <textarea type="text" value="test" class="code-input"></textarea>
+
+
+            </div>
+            </textarea>
+            <div class="cardGreen" tabindex="0">
+                <h2>Multi textarea boxes<br><i>task reminder</i></h2>
+                <p>Need to check and implement the possibility of having multiple textarea boxes within the a card. Well, I also need to test it. Not sure if it will work due to positioning being absolute, but maybe I can make a secondary class? idk yet, probably have to revisit in a few months with more experience</p>
+                <h2 class="code-title">Funny. Turns out it already works. Responds great.
+                </h2>
+                <p class="code-title">Spam spam Lorem Spam</p>
+                <textarea type="text" value="test" class="code-input"></textarea>
+
+                <textarea type="text" value="test" class="code-input">test 1</textarea>
+                <textarea type="text" value="test" class="code-input">test 2</textarea>
+                <p class="code-title2">Awesome. Saved a job. Brilliant.</p>
+            </div>
+            </textarea><div class="cardChasingBorder" tabindex="0">
+                <h2>More Card Classes</h2>
+                <p>Really need to find an easier way of animating css</p>
+                <textarea class="code-input" type="text" value="test" class="code-input">
+                    @property --angle {
+              <!--  syntax: '<angle>'; -->
+                    initial-value: 0deg;
+                    inherits: false;
+                }
+                    .cardChasingBorder::after, .cardChasingBorder::before {
+                        animation: 3s ChasingBorder linear infinite;
+                        background-image: conic-gradient(from var(--angle), transparent 80%, red);
+                    }
+                    .cardChasingBorder::before {
+                        filter: blur(0.2rem);
+                        opacity: 0.9;
+                    }
+                    @keyframes ChasingBorder {
+                        from{
+
+                            --angle: 0deg;
+                        }
+                        to {
+
+                            --angle: 360deg;
+                    }
+
+                }</textarea>
+
+            </div>
+            </textarea><div class="card" tabindex="0">
+                <h2>Responsive Grid</h2>
+                <p>Theoretically compatible with all devices. Works on 1fr and auto-repeat. I should test this with 10 cards (the class) with variety in word counts.</p>
+                <textarea type="text" value="test" class="code-input"></textarea>
+
+            </div>
+            </textarea><div class="card" tabindex="0">
+                <h2>Responsive Grid</h2>
+                <p>Theoretically compatible with all devices. Works on 1fr and auto-repeat. I should test this with 10 cards (the class) with variety in word counts.</p>
+                <textarea type="text" value="test" class="code-input"></textarea>
+
+            </div>
+            </textarea><div class="card" tabindex="0">
+                <h2>Flexbox Idea Gen:</h2>
+                <p>Recipe cards - hover animations (jpg maybe?) Upon click, takes to recipe print page - Recipe on the right, the annoying text on the left. </p>
+                <textarea type="text" value="test" class="code-input"></textarea>
+
+            </div>
+        </div>
+        <!-- Hidden until completed
+        
+        <h1 class="fixed-sec">Idea Generation for Implementation<br><i style="font-size: xx-small;">don't delete - could be useful despite the errors</i></h1>
+
+        <div class="grid-container2">
+            </textarea><div class="card" tabindex="0">
+                <h2>Google Review<br><i>from John Doe</i></h2>
+                <p>Amazing product! Exceeded my expectations with its quality and performance. Highly recommend to anyone looking for reliability and value. Will definitely purchase again.</p>
+                <textarea type="text" value="test" class="code-input"> Big thanks for the review, John! We're glad you enjoyed the product and hope to see you again in the future.
+                    For your next order, here's a 10% code: FAAAAAKE
+                </textarea>
+
+            </div>
+            <div class="card" tabindex="0">
+                <h2>Bing Review<br><i>from Jane Doe</i></h2>
+                <p>Excellent service and fast delivery. The product quality is top-notch. Will definitely recommend to friends and family.</p>
+                <textarea type="text" value="test" class="code-input">Thank you! We're thrilled to hear you had a great experience. Enjoy a 10% discount on your next purchase with code: FAAAAAKE
+         </div>       </textarea>
+
+            </div>
+            </textarea>
+            <div class="card" tabindex="0">
+                <h2>Booking.com Review<br><i>from Johnny Doe</i></h2>
+                <p>Great value for money. The product works as described and the customer service was very helpful.</p>
+                <textarea type="text" value="test" class="code-input">Thank you! We're thrilled to hear you had a great experience. Enjoy a 10% discount on your next purchase with code: FAAAAAKE
+                </textarea>
+
+            </div>
+            </textarea><div class="card" tabindex="0">
+                <h2>Daily Mail Review<br><i>from Evil Richard Branson</i></h2>
+                <p>Impressive quality and easy to use. The design is sleek and modern. Highly satisfied with my purchase.</p>
+                <textarea type="text" value="test" class="code-input">Cheers, mate. At ExampleCSS, we strive for transparency, integrity and community spirit. Whilst this may be a direct opposition to your own ideals as a profiteer of misinformation, hatred and global distrust, we appreciate and recognise that you're a complete arsehole and will happily take your money. Don't worry, we'll actually read the fine print. Sincerely, go fuck yourself! :D</textarea>
+                <h2 class="code-title"></h2><br><Br><br>
+            </div>
+            </textarea>
+            <div class="card" tabindex="0">
+                <h2>Conservative Party Review<br><i>from AnonGate</i></h2>
+                <p>Incredible value! ExampleCSS data helped us decide to increase UK tuition fees by 200%. This product enabled us to privatize education seamlessly. Back to our agenda! Don't forget to retrain and stamp out our culture!</p>
+                <textarea type="text" value="test" class="code-input">Thanks, Cons. We appreciate it. Here's what ChatGPT reviews your tenure: Over the last 12 years, the Conservative Party has taken us on quite the rollercoaster ride! They've promised fiscal discipline but somehow managed to balloon the national debt while handing out more tax cuts than a fire sale. From Brexit chaos to party scandals, it's been a sitcom of leadership changes and policy U-turns. Their environmental policy? As green as a coal mine! Through it all, they've insisted they're the party of stability—if by stability, you mean consistently unpredictable. It's like they’ve been binge-watching "House of Cards" and taking notes on how not to run a country!</textarea>
+            </div>
+            </textarea>
+
+            <div class="card" tabindex="0">
+                <h2>Donald Trump Review<br><i>from Russia with Love($)</i></h2>
+                <p>Just an incredible product—truly the best. It showed me how to inject bleach like a champion, direct a ‘peaceful protest’ <i>that totally <b>didn’t</b> storm the Capitol</i>, build half a wall that’s almost there, and even take some creative swings at democracy. It’s all just brilliant. Seriously, you couldn’t make this stuff up!</p>
+                <textarea type="text" value="test" class="code-input">Thanks, guy. Remember, setting your password to yourefired, and then changing it to Maga2020 after being hacked by a white hat, isn't a great idea! You should probably ensure you don't keep the same password on all of your accounts. Good luck, guy. Thanks for spreading nothing but hatred, and all the other little things no one knows about. Yet.</textarea>
+
+            </div>
+            </textarea>
+            <div class="card" tabindex="0">
+                <h2>Catholic Church Review<i><br>straight outta Vatican City</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+
+                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
+                </p>
+                <p>We commend the EZ-SCRUB3000’s effectiveness in cleansing impurities, as highlighted in South Park. Our trials, reminiscent of the “Love Boat” episode’s humorous mishaps, confirm its purifying power. However, its lack of a subscription service for ongoing support and failure to address other controversies, such as its limited application, reliability issues, and higher-than-expected maintenance costs, detracts from its virtue.<br><Br><br><br><br><br> These shortcomings result in a modest 1/5 rating. We hope future improvements will rectify these flaws, ensuring both enhanced efficacy and enduring support.
+                </p>
+
+
+                <textarea type="text" value="test" class="code-input">Thanks, guy. Remember, setting your password to yourefired, and then changing it to Maga2020 after being hacked by a white hat, isn't a great idea! You should probably ensure you don't keep the same password on all of your accounts. Good luck, guy. Thanks for spreading nothing but hatred, and all the other little things no one knows about. Yet.</textarea>
+            </div>
+
+            <div class="card" tabindex="0">
+                <h2>Pizza Express - Woking Review<br><i>from his royal Prince Andrew</i></h2>
+                <p>I highly endorse Pizza Express Woking—an ideal spot for a date with 17-year-olds. While I might have a peculiar reaction to sweating, I excel at entertaining the youth. Ask me about my VIP Epstein offer; I have a discount code!</p>
+                <textarea type="text" value="test" class="code-input">
+                    https://www.cbc.ca/news/prince-andrew-jeffrey-epstein-documents-1.7074336
+                </textarea>
+
+            </div>
+            </textarea>
+            
+            <div class="card" tabindex="0">
+                <h2>Test - why is border merging? Argh.</h2>
+                <p>Whilst I doubt I need to mention it, based on the current worldwide.. Demographics, I should point out that the above reviews are (very obviously) satirical.</p>
+                <h2 class="code-title">Satire, bro.</h2>
+                <textarea type="text" value="test" class="code-input">I hope you had a little chuckle at the very least. Hatred is widespread, and unfortunately even I am part of it by posting the above fake reviews. Be better than me.</textarea>
+
+
+            </div>
+            
+        </di
+        -->
+</body>
+</html>
