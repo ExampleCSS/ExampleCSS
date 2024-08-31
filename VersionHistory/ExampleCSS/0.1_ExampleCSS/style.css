@@ -1,258 +1,222 @@
-* {
-    margin: 0;
-    padding: 0;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>ExampleCSS</title>
+</head>
+<body>
+    <h1>A playground for learning HTML & CSS</h1>
+    <div class="grid-container">
+        <!-- #region Fold for the div class "card" is here. 10 in total -->
+        <div class="card">
+            <div class="highlight-left">
+                <input type="text" value="test" class="code-input">
+            </div>
+            <div class="highlight-right">
+                <input type="text" value="test">
+            </div>
+            <h2>Responsive Grid</h2>
+            <p><a href="examplecss.com">Click me to go home</a>Theoretically compatible with all devices. Works on 1fr and auto-repeat. I should test this with 10 cards (the class) with variety in word counts.</p>
+        </div>
+        <div class="card">
+            <div class="highlight-left">
+                <input type="text" value="test" class="code-input">
+            </div>
+            <div class="highlight-right">
+                <input type="text" value="test" class="code-input">
+            </div>
+            <h2>Responsive Grid</h2>
+            <p>Theoretically compatible with all devices. Works on 1fr and auto-repeat. I should test this with 10 cards (the class) with variety in word counts.</p>
+        </div>
+        <div class="card">
+            <div class="highlight-left">
+                <input type="text" value="test">
+            </div>
+            <div class="highlight-right">
+                <input type="text" value="test">
+            </div>
+            <h2>Responsive Grid</h2>
+            <p>Theoretically compatible with all devices. Works on 1fr and auto-repeat. I should test this with 10 cards (the class) with variety in word counts.</p>
+        </div>
+        <div class="card">
+            <div class="highlight-left">
+                <input type="text" value="test">
+            </div>
+            <div class="highlight-right">
+                <input type="text" value="test">
+            </div>
+            <h2>Responsive Grid</h2>
+            <p>Theoretically compatible with all devices. Works on 1fr and auto-repeat. I should test this with 10 cards (the class) with variety in word counts.</p>
+        </div>
+        <div class="card">
+            <div class="highlight-left">
+                <input type="text" value="test">
+            </div>
+            <div class="highlight-right">
+                <input type="text" value="test">
+            </div>
+            <h2>Responsive Grid</h2>
+            <p>Theoretically compatible with all devices. Works on 1fr and auto-repeat. I should test this with 10 cards (the class) with variety in word counts.</p>
+        </div>
+        <div class="card">
+            <div class="highlight-left">
+                <input type="text" value="test">
+            </div>
+            <div class="highlight-right">
+                <input type="text" value="test">
+            </div>
+            <h2>Responsive Grid</h2>
+            <p>Theoretically compatible with all devices. Works on 1fr and auto-repeat. I should test this with 10 cards (the class) with variety in word counts.</p>
+        </div>
+        <div class="card">
+            <div class="highlight-left">
+                <input type="text" value="test">
+            </div>
+            <div class="highlight-right">
+                <input type="text" value="test">
+            </div>
+            <h2>Responsive Grid</h2>
+            <p>Theoretically compatible with all devices. Works on 1fr and auto-repeat. I should test this with 10 cards (the class) with variety in word counts.</p>
+        </div>
+        <div class="card">
+            <div class="highlight-left">
+                <input type="text" value="test">
+            </div>
+            <div class="highlight-right">
+                <input type="text" value="test">
+            </div>
+            <h2>Responsive Grid</h2>
+            <p>Theoretically compatible with all devices. Works on 1fr and auto-repeat. I should test this with 10 cards (the class) with variety in word counts.</p>
+        </div>
+        <div class="card">
+            <div class="highlight-left">
+                <input type="text" value="test">
+            </div>
+            <div class="highlight-right">
+                <input type="text" value="test">
+            </div>
+            <h2>Responsive Grid</h2>
+            <p>Theoretically compatible with all devices. Works on 1fr and auto-repeat. I should test this with 10 cards (the class) with variety in word counts.</p>
+        </div>
+        <div class="card">
+            <div class="highlight-left">
+                <input type="text" value="test">
+            </div>
+            <div class="highlight-right">
+                <input type="text" value="test">
+            </div>
+            <h2>Responsive Grid</h2>
+            <p>Theoretically compatible with all devices. Works on 1fr and auto-repeat. I should test this with 10 cards (the class) with variety in word counts.</p>
+        </div>
+    </div>
+    <!-- #endregion -->
+    <h1 class="fixed-sec">A QUICK FIX...</h1>
 
-:root {
-    --max-negative-margin-bottom: -270px;
-}
-
-html {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: white;
-    text-align: center;
-    font-size: 1vw;
-}
-
-body {
-    padding: min(50px, 7%);
-    background-color: rgb(13, 13, 20);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-h1 {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 5px 0;
-    font-size: 3rem;
-}
-
-.section {
-    width: 100%;
-    max-width: 1200px;
-    margin-bottom: 50px;
-}
-
-/* Update this class for the fixed section */
-.fixed-sec {
-    position: relative; /* Change to relative to keep it in place */
-    width: 100%;
-    background-color: transparent; /* Make the background transparent */
-    z-index: 1000;
-    padding: 20px 0;
-    margin-top: 50px; /* Adjust this value to add space above the fixed section */
-    text-align: center; /* Ensure the text is centered */
-}
-
-/* Ensure grid-container2 does not overlap with the fixed section */
-.grid-container2 {
-    margin-top: 150px; /* Adjust this value based on the height of the fixed section */
-}
-
-.text-box {
-    background-color: rgb(13, 13, 20); /* Set background color */
-    border-radius: 50%; /* Make edges circular */
-    color: white; /* Set font color to white */
-    padding: 1em; /* Add some padding */
-    border: 1px solid rgb(75, 82, 92); /* Add a 1px light grey border */
-    font-size: 1rem; /* Set font size */
-    width: 100%; /* Set width to 100% */
-    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
-}
-
-.code-input {
-    background-color: #0d0d14; /* RGB(13, 13, 20) */
-    border: none;
-    border-radius: 10px; /* Adjust the value for more or less curvature */
-    padding: 10px;
-    color: white; /* Text color */
-    font-family: monospace; /* Font for code */
-    width: 100%; /* Full width */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
-}
-
-.code-input:focus {
-    outline: none; /* Remove default focus outline */
-    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* Add a subtle shadow on focus */
-}
-
-.text-box {
-    background-color: rgb(13, 13, 20); /* Set background color */
-    border-radius: 10px; /* Match the card's border-radius */
-    color: white; /* Set font color to white */
-    padding: 1em; /* Add some padding */
-    border: 2px solid rgb(75, 82, 92); /* Optional: Add a border similar to the card */
-    font-size: 1rem; /* Set font size */
-    width: 100%; /* Set width to 100% */
-    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
-}
-
-/* Scale down everything below <h1> by 30% */
-h1 + * {
-    transform: scale(0.7); /* Scale down by 30% */
-    transform-origin: top center; /* Ensure scaling starts from the top left corner */
-}
-
-.secondtitle {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1.5em; /* Set a different font size */
-    color: #ffffff; /* Set a different text color */
-    margin-top: 10px; /* Adjust the top margin */
-    margin-bottom: 10px; /* Adjust the bottom margin */
-    font-weight: bold; /* Add bold font weight */
-}
-
-.card {
-    position: relative;
-    padding: 2em;
-    border: 2px solid rgb(75, 82, 92);
-    border-radius: 10px;
-    background-color: #222429;
-    text-align: center;
-    font-size: 1.5rem;
-    overflow: hidden;
-    color: white; /* Ensure text color is white */
-    z-index: 1; /* Ensure text is above highlights */
-}
-
-.card .highlight-left,
-.card .highlight-right {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 50%;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 0; /* Ensure highlights are below text */
-}
-
-.card .highlight-left {
-    left: 0;
-    background: linear-gradient(to right, rgba(13, 13, 20, 0.7), rgba(75, 82, 92, 0.3));
-}
-
-.card .highlight-right {
-    right: 0;
-    background: linear-gradient(to left, rgba(13, 13, 20, 0.7), rgba(75, 82, 92, 0.3));
-}
-
-.card .highlight-left input,
-.card .highlight-right input {
-    display: none;
-    width: 50%;
-    height: 50%;
-    border: none;
-    background-color: white;
-    text-align: center;
-    font-size: 1rem;
-}
-
-.card .highlight-left:hover input,
-.card .highlight-left:focus-within input,
-.card .highlight-right:hover input,
-.card .highlight-right:focus-within input {
-    display: block;
-}
-
-/* Ensure specific text elements have higher z-index */
-.card h2,
-.card p {
-    position: relative;
-    z-index: 2; /* Ensure text is above highlights */
-}
-
-.grid-container {
-    position: relative; /* Required for pseudo-element positioning */
-    display: grid; /* Use CSS Grid layout */
-    border: 4px solid transparent; /* Add a transparent border */
-    border-radius: 15px; /* Round the corners of the grid container */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Define the grid columns with a minimum width of 300px */
-    gap: 10px; /* Add a gap between grid items */
-    justify-content: center; /* Center the grid items horizontally */
-    margin-top: 30px; /* Add margin to position grid-container 30px below the end of the border shadow */
-    margin-bottom: var(--max-negative-margin-bottom);
-}
-
-.grid-container::before {
-    content: ''; /* Create a pseudo-element */
-    position: absolute; /* Position the pseudo-element absolutely */
-    top: -20px; /* Position 20px above the grid container */
-    left: -20px; /* Position 20px to the left of the grid container */
-    right: -20px; /* Position 20px to the right of the grid container */
-    bottom: -20px; /* Position 20px below the grid container */
-    z-index: -1; /* Place the pseudo-element behind the grid container */
-    border-radius: inherit; /* Inherit the border-radius from the grid container */
-    background: linear-gradient(to right, rgba(13, 13, 20, 0.7), rgba(75, 82, 92, 0.3)); /* Add a linear gradient background */
-    box-shadow: 0 0 0 20px rgba(13, 13, 20, 0.158); /* Optional: Add shadow to the gradient */
-}
-
-.grid-container2 {
-    position: relative; /* Required for pseudo-element positioning */
-    display: grid; /* Use CSS Grid layout */
-    border: 4px solid transparent; /* Add a transparent border */
-    border-radius: 15px; /* Round the corners of the grid container */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Define the grid columns with a minimum width of 300px */
-    gap: 10px; /* Add a gap between grid items */
-    justify-content: center; /* Center the grid items horizontally */
-    margin-top: 30px; /* Add margin to position grid-container2 30px below the end of the border shadow */
-}
-
-.grid-container2::before {
-    content: ''; /* Create a pseudo-element */
-    position: absolute; /* Position the pseudo-element absolutely */
-    top: -20px; /* Position 20px above the grid container */
-    left: -20px; /* Position 20px to the left of the grid container */
-    right: -20px; /* Position 20px to the right of the grid container */
-    bottom: -20px; /* Position 20px below the grid container */
-    z-index: -1; /* Place the pseudo-element behind the grid container */
-    border-radius: inherit; /* Inherit the border-radius from the grid container */
-    background: linear-gradient(to right, rgba(75, 82, 92, 0.3), rgba(13, 13, 20, 0.7)); /* Add a linear gradient background with opposite colors */
-    box-shadow: 0 0 0 20px rgba(13, 13, 20, 0.079); /* Optional: Add shadow to the gradient with 50% brightness */
-}
-
-/* Media queries for finer control */
-@media (max-width: 1200px) {
-    html {
-        font-size: 1.5vw; /* Reduced base font size for PC/laptop screens */
-    }
-    h1 {
-        font-size: 2rem; /* Reduced font size of h1 elements */
-    }
-    .card {
-        font-size: 1.1rem; /* Reduced font size of text inside the card */
-    }
-}
-
-@media (max-width: 768px) {
-    html {
-        font-size: 1.6vw; /* Adjust base font size for smaller screens */
-    }
-    h1 {
-        font-size: 2rem; /* Adjust font size of h1 elements */
-    }
-    .card {
-        font-size: 1.2rem; /* Adjust font size of text inside the card */
-    }
-    .card h2 {
-        font-size: 1.5rem; /* Adjust font size for h2 elements inside the card */
-        word-break: break-word; /* Ensure long words break to fit within the container */
-    }
-    .grid-container {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust grid item width */
-        margin-top: 20px; /* Reduce margin-top for grid-container on cell phones */
-    }
-    .grid-container2 {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust grid item width */
-        margin-top: 20px; /* Reduce margin-top for grid-container2 on cell phones */
-    }
-}
-
-/* Media query to reduce font size by 30% at fullscreen size */
-@media (min-width: 1200px) {
-    .card {
-        font-size: 1.05rem; /* Reduce font size by 30% */
-    }
-}
+    <div class="grid-container2">
+        <!-- #region f2-->
+        <div class="card">
+            <div class="highlight-left">
+                <input type="text" value="test">
+            </div>
+            <div class="highlight-right">
+                <input type="text" value="test">
+            </div>
+            <h2>Responsive Grid</h2>
+            <p>Theoretically compatible with all devices. Works on 1fr and auto-repeat. I should test this with 10 cards (the class) with variety in word counts.</p>
+        </div>
+        <div class="card">
+            <div class="highlight-left">
+                <input type="text" value="test">
+            </div>
+            <div class="highlight-right">
+                <input type="text" value="test">
+            </div>
+            <h2>Responsive Grid</h2>
+            <p>Theoretically compatible with all devices. Works on 1fr and auto-repeat. I should test this with 10 cards (the class) with variety in word counts.</p>
+        </div>
+        <div class="card">
+            <div class="highlight-left">
+                <input type="text" value="test">
+            </div>
+            <div class="highlight-right">
+                <input type="text" value="test">
+            </div>
+            <h2>Responsive Grid</h2>
+            <p>Theoretically compatible with all devices. Works on 1fr and auto-repeat. I should test this with 10 cards (the class) with variety in word counts.</p>
+        </div>
+        <div class="card">
+            <div class="highlight-left">
+                <input type="text" value="test">
+            </div>
+            <div class="highlight-right">
+                <input type="text" value="test">
+            </div>
+            <h2>Responsive Grid</h2>
+            <p>Theoretically compatible with all devices. Works on 1fr and auto-repeat. I should test this with 10 cards (the class) with variety in word counts.</p>
+        </div>
+        <div class="card">
+            <div class="highlight-left">
+                <input type="text" value="test">
+            </div>
+            <div class="highlight-right">
+                <input type="text" value="test">
+            </div>
+            <h2>Responsive Grid</h2>
+            <p>Theoretically compatible with all devices. Works on 1fr and auto-repeat. I should test this with 10 cards (the class) with variety in word counts.</p>
+        </div>
+        <div class="card">
+            <div class="highlight-left">
+                <input type="text" value="test">
+            </div>
+            <div class="highlight-right">
+                <input type="text" value="test">
+            </div>
+            <h2>Responsive Grid</h2>
+            <p>Theoretically compatible with all devices. Works on 1fr and auto-repeat. I should test this with 10 cards (the class) with variety in word counts.</p>
+        </div>
+        <div class="card">
+            <div class="highlight-left">
+                <input type="text" value="test">
+            </div>
+            <div class="highlight-right">
+                <input type="text" value="test">
+            </div>
+            <h2>Responsive Grid</h2>
+            <p>Theoretically compatible with all devices. Works on 1fr and auto-repeat. I should test this with 10 cards (the class) with variety in word counts.</p>
+        </div>
+        <div class="card">
+            <div class="highlight-left">
+                <input type="text" value="test">
+            </div>
+            <div class="highlight-right">
+                <input type="text" value="test">
+            </div>
+            <h2>Responsive Grid</h2>
+            <p>Theoretically compatible with all devices. Works on 1fr and auto-repeat. I should test this with 10 cards (the class) with variety in word counts.</p>
+        </div>
+        <div class="card">
+            <div class="highlight-left">
+                <input type="text" value="test">
+            </div>
+            <div class="highlight-right">
+                <input type="text" value="test">
+            </div>
+            <h2>Responsive Grid</h2>
+            <p>Theoretically compatible with all devices. Works on 1fr and auto-repeat. I should test this with 10 cards (the class) with variety in word counts.</p>
+        </div>
+        <div class="card">
+            <div class="highlight-left">
+                <input type="text" value="test">
+            </div>
+            <div class="highlight-right">
+                <input type="text" value="test">
+            </div>
+            <h2>Responsive Grid</h2>
+            <p>Theoretically compatible with all devices. Works on 1fr and auto-repeat. I should test this with 10 cards (the class) with variety in word counts.</p>
+        </div>
+    </div>
+    <!-- #endregion -->
+</body>
+</html>
