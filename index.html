@@ -7,16 +7,30 @@
     <title>ExampleCSS</title>
     </head>
     <body>
-    <div class="sidebar">
+    <div class="sidebar">Projects
         <a href="flexbox/index.html">Flexbox</a>
-        <a href="#"> Link 1</a>
-        <a href="#"> Link 2</a>
-        <a href="#"> Link 3</a>
-        <a href="#"> Link 4</a>
-        <a href="#"> Link 5</a>
+        <a href="#"> - </a>
+        <a href="#"> - </a>
+        <a href="#"> - </a>
+        <a href="#"> - </a>
+        <a href="#"> - </a>
+        <a href="#"> - </a>
+        <a href="#"> - </a>
+        <a href="#"> - </a>
+        <a href="#"> Grid Container 1/2</a>
+
+    </div>
+    <div class="sidebarvh">Version History
+        <a href="/VersionHistory/v0.29/index.html">v0.29</a>
+        <a href="/VersionHistory/v0.21/index.html">v0.21</a>
+        <a href="/VersionHistory/V0.2/index.html">v0.2</a>
+        <a href="/VersionHistory/V0.12/index.html">v0.12</a>
+        <a href="#"> - </a>
+        <a href="#"> - </a>
     </div>
     <div class="main-content">
-        <h1>A playground for relearning HTML & CSS<br><br><br></h1>
+        <h1>A playground for relearning HTML & CSS</h1>
+        Grid Container 1&2 development:
 
         <div class="grid-container">
 
@@ -194,14 +208,86 @@
             </textarea>
             <div class="cardYellow" tabindex="0">
                 <h2>Sidebar Left<br><i>implemented - unfin</i></h2>
-                <p>I've implemented a basic sidebar, but it's messsssyyyy. Responsive, but messy. I should finalise this first, and then do the vh afterwards. Going to be tricky making it responsive if I base it on current CSS. Maybe right sidebar up by 15%, pad out some space, then duplicate underneath.  </p>
-                <textarea type="text" value="test" class="code-input"></textarea>
+                <p><strike>I've implemented a basic sidebar, but it's messsssyyyy. Responsive, but messy. I should finalise this first, and then do the vh afterwards. Going to be tricky making it responsive if I base it on current CSS. Maybe right sidebar up by 15%, pad out some space, then duplicate underneath. </strike>  </p>
+                <h2 class="code-title">Did its job!</h2>
+                <p class="code-title">I'll play more with sidebar settings and watch some videos. Too many 90s vibes for me. </p>
+                <br>
+                <textarea type="text" value="test" class="code-input">.sidebar {
+                    width: 100px;
+                    background-color: rgba(75, 82, 92, 0.3);
+                    padding: 15px;
+                    justify-content: center;
+                    align-items: center;
+                    align-content: center;
+                    height: auto;
+                    overflow: auto;
+                    position: fixed;
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    border: 1px solid rgba(75, 82, 92, 0.3);
+                    border-radius: 15px;
+                    font-family: 'Helvetica', sans-serif;
+                    font-size: xx-small;
+                    font-weight: bold;
+                    color: rgb(107, 105, 105);
+                }
+                
+                .sidebar a {
+                    display: block;
+                    color: rgb(124, 123, 123);
+                    padding: 8px 0;
+                    text-decoration: none;
+                    font-weight: bold;
+                }
+                
+                .sidebar a:hover {
+                    background-color: #5e5e5e;
+                    border-radius: 10px;
+                }</textarea>
 
             </div>
-            </textarea><div class="card" tabindex="0">
+            </textarea><div class="cardChasingBorderYellow" tabindex="0">
                 <h2>Sidebar Right<br><i>task reminder: vh</i></h2>
-                <p>Duplicate the left side bar into a new class probably named sidebar-right. It will contain the version history of the page currently on, and will span across future elements. Think it'll be a bit more of a nightmare than I expect.</p>
-                <textarea type="text" value="test" class="code-input"></textarea>
+                <p><strike>Duplicate the left side bar into a new class probably named sidebar-right. It will contain the version history of the page currently on, and will span across future elements. Think it'll be a bit more of a nightmare than I expect.</strike></p>
+                <h2 class="code-title">Implemented</h2>
+                <p class="code-title">Version History sidebar on the right, but it will get super cluttered in a few months. Looks way too 90s. Leaving this as is and moving on to a form of navbar to integrate.</p>
+                <br>
+                <textarea type="text" value="test" class="code-input">.sidebarvh {
+                        width: 100px;
+                        background-color: rgba(75, 82, 92, 0.3);
+                        padding: 15px;
+                        justify-content: center;
+                        align-items: center;
+                        align-content: center;
+                        height: auto;
+                        overflow: auto;
+                        position: fixed;
+                        right: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        border: 1px solid rgba(75, 82, 92, 0.3);
+                        border-radius: 15px;
+                        font-family: 'Helvetica', sans-serif;
+                        font-size: xx-small;
+                        font-weight: bold;
+                        color: rgb(107, 105, 105);
+                    }
+                    
+                    .sidebarvh a {
+                        display: block;
+                        color: rgb(124, 123, 123);
+                        padding: 8px 0;
+                        text-decoration: none;
+                        font-weight: bold;
+                    }
+                    
+                    .sidebarvh a:hover {
+                        background-color: #5e5e5e;
+                        border-radius: 10px;
+                    }
+
+                </textarea>
 
 
             </div>
@@ -220,7 +306,10 @@
             </div>
             </textarea><div class="cardChasingBorder" tabindex="0">
                 <h2>More Card Classes</h2>
-                <p>Really need to find an easier way of animating css</p>
+                <p>Thin to test </p>
+                <h2 class="code-title">Conic Gradient</h2>
+                <p class="code-title">Works way better than expected. Playing with keyframes is pretty sweet.</p>
+                <br>
                 <textarea class="code-input" type="text" value="test" class="code-input">
                     @property --angle {
               <!--  syntax: '<angle>'; -->
@@ -248,9 +337,9 @@
                 }</textarea>
 
             </div>
-            </textarea><div class="card" tabindex="0">
-                <h2>Responsive Grid</h2>
-                <p>Theoretically compatible with all devices. Works on 1fr and auto-repeat. I should test this with 10 cards (the class) with variety in word counts.</p>
+            </textarea><div class="cardChasingBorderYellow" tabindex="0">
+                <h2>Navigation Menu & Sidebar</h2>
+                <p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsumLorem ipsum Lorem ipsum Lorem ipsumLorem ipsum Lorem ipsum  Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsum</p>
                 <textarea type="text" value="test" class="code-input"></textarea>
 
             </div>
@@ -260,7 +349,7 @@
                 <textarea type="text" value="test" class="code-input"></textarea>
 
             </div>
-            </textarea><div class="card" tabindex="0">
+            </textarea><div class="cardChasingBorderRed" tabindex="0">
                 <h2>Flexbox Idea Gen:</h2>
                 <p>Recipe cards - hover animations (jpg maybe?) Upon click, takes to recipe print page - Recipe on the right, the annoying text on the left. </p>
                 <textarea type="text" value="test" class="code-input"></textarea>
