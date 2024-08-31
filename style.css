@@ -59,6 +59,41 @@ body {
 
 .sidebar a:hover {
     background-color: #5e5e5e;
+    border-radius: 10px;
+}
+
+.sidebarvh {
+    width: 100px;
+    background-color: rgba(75, 82, 92, 0.3);
+    padding: 15px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: auto;
+    overflow: auto;
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 1px solid rgba(75, 82, 92, 0.3);
+    border-radius: 15px;
+    font-family: 'Helvetica', sans-serif;
+    font-size: xx-small;
+    font-weight: bold;
+    color: rgb(107, 105, 105);
+}
+
+.sidebarvh a {
+    display: block;
+    color: rgb(124, 123, 123);
+    padding: 8px 0;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.sidebarvh a:hover {
+    background-color: #5e5e5e;
+    border-radius: 10px;
 }
 
 /* Responsive Adjustments for Sidebar */
@@ -76,6 +111,24 @@ body {
     }
 
     .sidebar a {
+        padding: 5px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebarvh {
+        width: 50px;
+        padding: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebarvh {
+        width: 30px;
+        padding: 5px;
+    }
+
+    .sidebarvh a {
         padding: 5px 0;
     }
 }
@@ -171,7 +224,7 @@ h1 + * {
     z-index: -2; /*could cause error*/
 }
 
-.card, .cardYellow, .cardGreen, .cardChasingBorder {
+.card, .cardYellow, .cardGreen, .cardChasingBorder, .cardChasingBorderYellow, .cardChasingBorderRed {
     margin: 0 auto;
     text-align: center;
     font-size: 1.5rem;
@@ -192,7 +245,9 @@ h1 + * {
 .card::after, .card::before,
 .cardYellow::after, .cardYellow::before,
 .cardGreen::after, .cardGreen::before,
-.cardChasingBorder::after, .cardChasingBorder::before { /*border animation*/
+.cardChasingBorder::after, .cardChasingBorder::before,
+.cardChasingBorderRed::after, .cardChasingBorderRed::before,
+.cardChasingBorderYellow::after, .cardChasingBorderYellow::before { /*border animation*/
     content: '';
     position: absolute;
     height: 100%;
@@ -304,8 +359,64 @@ h1 + * {
 
 }
 
+.cardChasingBorderRed::after, .cardChasingBorderRed::before {
+    animation: 18s ChasingBorder linear infinite;
+    opacity: 0.6;
+    background-image: 
+    repeating-conic-gradient(from var(--angle), 
+        #bf212d 0%, 
+        #bf212d 6%, 
+        #d32f2f 12%, 
+        #e53935 18%, 
+        #f44336 24%, 
+        #ef5350 30%, 
+        #e57373 36%, 
+        transparent 42%, 
+        #bf212d 48%
+    ),
+    repeating-conic-gradient(from var(--angle2), 
+        #ff5252 0%, 
+        #ff5252 6%, 
+        #ff1744 12%, 
+        #d50000 18%, 
+        #c51162 24%, 
+        #f50057 30%, 
+        #ff4081 36%, 
+        transparent 42%, 
+        #ff5252 48%
+    );
+}
 
-.card::before, .cardYellow::before, .cardGreen::before, .cardChasingBorder::before {
+.cardChasingBorderYellow::after, .cardChasingBorderYellow::before {
+    animation: 18s ChasingBorder linear infinite;
+    opacity: 0.1;
+    background-image: 
+    repeating-conic-gradient(from var(--angle), 
+        #ffd700 0%, 
+        #ffd700 6%, 
+        #ffea00 12%, 
+        #fff176 18%, 
+        #fff59d 24%, 
+        #fff9c4 30%, 
+        #ffeb3b 36%, 
+        transparent 42%, 
+        #ffd700 48%
+    ),
+    repeating-conic-gradient(from var(--angle2), 
+        #ffeb3b 0%, 
+        #ffeb3b 6%, 
+        #ffea00 12%, 
+        #ffd600 18%, 
+        #ffc107 24%, 
+        #ffb300 30%, 
+        #ffa000 36%, 
+        transparent 42%, 
+        #ffeb3b 48%
+    );
+}
+
+
+.card::before, .cardYellow::before, .cardGreen::before, .cardChasingBorder::before, .cardChasingBorderYellow::before, .cardChasingBorderRed::before {
     filter: blur(0.2rem);
     opacity: 0.9;
 }
@@ -343,7 +454,7 @@ h1 + * {
     to { padding: 6px; }
 }
 
-.card .code-input, .cardYellow .code-input, .cardGreen .code-input, .cardChasingBorder .code-input {
+.card .code-input, .cardYellow .code-input, .cardGreen .code-input, .cardChasingBorder .code-input, .cardChasingBorderRed .code-input, .cardChasingBorderYellow .code-input {
     background-color: #1d1d1d;
     border: none;
     color: white;
@@ -358,7 +469,7 @@ h1 + * {
     z-index: 1; /*trying to wrap text around the textarea*/
 }
 
-.card .code-title, .cardYellow .code-title, .cardGreen .code-title, .cardChasingBorder .code-title {
+.card .code-title, .cardYellow .code-title, .cardGreen .code-title, .cardChasingBorder .code-title, .cardChasingBorderRed .code-title, .cardChasingBorderYellow .code-title {
     display: none; /* Initially hide the new h2 element */
     z-index: 2;
     cursor: pointer; /* Change cursor to pointer to indicate clickability */
@@ -370,18 +481,18 @@ h1 + * {
     position: relative;
 }
 
-.card:focus-within .code-input, .cardYellow:focus-within .code-input, .cardGreen:focus-within .code-input, .cardChasingBorder:focus-within .code-input,
-.card:focus-within .code-title, .cardYellow:focus-within .code-title, .cardGreen:focus-within .code-title, .cardChasingBorder:focus-within .code-title {
+.card:focus-within .code-input, .cardYellow:focus-within .code-input, .cardGreen:focus-within .code-input, .cardChasingBorder:focus-within .code-input, .cardChasingBorderYellow:focus-within .code-input, .cardChasingBorderRed:focus-within .code-input,
+.card:focus-within .code-title, .cardYellow:focus-within .code-title, .cardGreen:focus-within .code-title, .cardChasingBorder:focus-within .code-title, .cardChasingBorderRed:focus-within .code-title, .cardChasingBorderYellow:focus-within .code-title {
      display: block;
     margin-bottom: 0;
 }
 
-.card:focus-within h2, .cardYellow:focus-within h2, .cardGreen:focus-within h2, .cardChasingBorder:focus-within h2,
-.card:focus-within p, .cardYellow:focus-within p, .cardGreen:focus-within p, .cardChasingBorder:focus-within p {
+.card:focus-within h2, .cardYellow:focus-within h2, .cardGreen:focus-within h2, .cardChasingBorder:focus-within h2, .cardChasingBorderRed:focus-within h2, .cardChasingBorderYellow:focus-within h2,
+.card:focus-within p, .cardYellow:focus-within p, .cardGreen:focus-within p, .cardChasingBorder:focus-within p, .cardChasingBorderRed:focus-within p, .cardChasingBorderYellow:focus-within p {
     display: none;
 }
 
-.card .code-title2, .cardYellow .code-title2, .cardGreen .code-title2, .cardChasingBorder .code-title2 {
+.card .code-title2, .cardYellow .code-title2, .cardGreen .code-title2, .cardChasingBorder .code-title2, .cardChasingBorderRed .code-title2, .cardChasingBorderYellow .code-title2 {
     display: none; /* Initially hide the new h2 element */
     z-index: 2;
     cursor: pointer; /* Change cursor to pointer to indicate clickability */
@@ -392,16 +503,16 @@ h1 + * {
     white-space: normal; /*choices: normal pre nowrap pre-wrap pre-line*/
     position: relative;
 }
-.card:focus-within .code-input, .cardYellow:focus-within .code-input, .cardGreen:focus-within .code-input, .cardChasingBorder:focus-within .code-input,
-.card:focus-within .code-title2, .cardYellow:focus-within .code-title2, .cardGreen:focus-within .code-title2, .cardChasingBorder:focus-within .code-title2 {
+.card:focus-within .code-input, .cardYellow:focus-within .code-input, .cardGreen:focus-within .code-input, .cardChasingBorder:focus-within .code-input, .cardChasingBorderRed:focus-within .code-input, .cardChasingBorderYellow:focus-within .code-input,
+.card:focus-within .code-title2, .cardYellow:focus-within .code-title2, .cardGreen:focus-within .code-title2, .cardChasingBorder:focus-within .code-title2, .cardChasingBorderRed:focus-within .code-title2, .cardChasingBorderYellow:focus-within .code-title2 {
     display: block;
    margin-bottom: 0;
    position: inherit;
 }
 
 
-.card h2, .cardYellow h2, .cardGreen h2, .cardChasingBorder h2,
-.card p, .cardYellow p, .cardGreen p, .cardChasingBorder p {
+.card h2, .cardYellow h2, .cardGreen h2, .cardChasingBorder h2, .cardChasingBorderRed h2, .cardChasingBorderYellow h2,
+.card p, .cardYellow p, .cardGreen p, .cardChasingBorder p, .cardChasingBorderRed p, .cardChasingBorderYellow p {
     cursor: pointer; /* Change cursor to pointer to indicate clickability */
     font-size: 1rem;
     margin: 10px 0;
@@ -463,7 +574,7 @@ h1 + * {
     h1 {
         font-size: 2rem;
     }
-    .card, .cardYellow, .cardGreen, .cardChasingBorder {
+    .card, .cardYellow, .cardGreen, .cardChasingBorder, .cardChasingBorderRed, .cardChasingBorderYellow {
         font-size: 1.1rem;
     }
 }
@@ -475,10 +586,10 @@ h1 + * {
     h1 {
         font-size: 2rem;
     }
-    .card, .cardYellow, .cardGreen, .cardChasingBorder {
+    .card, .cardYellow, .cardGreen, .cardChasingBorder, .cardChasingBorderRed, .cardChasingBorderYellow {
         font-size: 0.5rem;
     }
-    .card h2, .cardYellow h2, .cardGreen h2, .cardChasingBorder h2 {
+    .card h2, .cardYellow h2, .cardGreen h2, .cardChasingBorder h2, .cardChasingBorderRed h2, .cardChasingBorderYellow h2 {
         font-size: 1.2rem;
         word-break: break-word;
     }
@@ -493,11 +604,11 @@ h1 + * {
 }
 
 @media (min-width: 1200px) {
-    .card, .cardYellow, .cardGreen, .cardChasingBorder {
+    .card, .cardYellow, .cardGreen, .cardChasingBorder, .cardChasingBorderRed, .cardChasingBorderYellow {
         font-size: 1rem;
     }
 
-    .card h2, .cardYellow h2, .cardGreen h2, .cardChasingBorder h2 {
+    .card h2, .cardYellow h2, .cardGreen h2, .cardChasingBorder h2, .cardChasingBorderRed h2, .cardChasingBorderYellow h2 {
         font-size: 1rem;
         word-break: break-word;
     }
